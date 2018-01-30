@@ -38,6 +38,9 @@ public class LinkedList<T> {
     iter.setNext(n);
   }
 
+  /**
+   * Meant to be a simple print function for simple types (integer, string)
+   */
   @Override
   public String toString() {
     Node<T> iter = this.head;
