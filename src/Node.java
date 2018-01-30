@@ -40,4 +40,9 @@ public class Node<T> {
   public void setNext(Node<T> other) {
     this.next = other;
   }
+
+  @Override
+  public String toString() {
+    return this.data.toString();
+  }
 }
