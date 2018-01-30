@@ -44,6 +44,7 @@ public class LinkedList<T> {
       iter = iter.getNext();
     }
 
+    // add the last element of the list whose getNext() is null
     out.append(iter);
 
     return out.toString();
