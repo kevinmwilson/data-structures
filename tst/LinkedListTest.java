@@ -23,4 +23,22 @@ public class LinkedListTest {
 
     assertEquals(expected, list.toString());
   }
+
+  @Test
+  public void prependNullListTest() {
+    LinkedList<Integer> list = new LinkedList<>();
+
+    list.prepend(new Node<>(5));
+
+    assertEquals((Integer) 5, list.getHead().getData());
+  }
+
+  @Test
+  public void prependListTest() {
+    LinkedList<Integer> list = new LinkedList<>(new Node<>(3));
+    list.append(new Node<>(5));
+    list.prepend(new Node<>(6));
+
+    assertEquals((Integer) 6, list.getHead().getData());
+  }
 }
