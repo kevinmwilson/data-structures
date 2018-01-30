@@ -41,4 +41,20 @@ public class LinkedListTest {
 
     assertEquals((Integer) 6, list.getHead().getData());
   }
+
+  @Test
+  public void getHeadAndTailSingleListTest() {
+    LinkedList<Integer> list = new LinkedList<>(new Node<>(7));
+
+    assertEquals((Integer) 7, list.getHead().getData());
+    assertEquals((Integer) 7, list.getTail().getData());
+  }
+
+  @Test
+  public void appendListTest() {
+    LinkedList<Integer> list = new LinkedList<>(new Node<>(8));
+    list.append(new Node<>(7));
+
+    assertEquals((Integer) 7, list.getTail().getData());
+  }
 }
