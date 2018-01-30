@@ -15,10 +15,6 @@ public class LinkedList<T> {
     return this.head;
   }
 
-  public void setHead(Node<T> other) {
-    this.head = other;
-  }
-
   public void append(Node<T> n) {
 
     // if the list is null, make the appendee the head
