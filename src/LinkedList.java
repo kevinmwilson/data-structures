@@ -38,6 +38,15 @@ public class LinkedList<T> {
     iter.setNext(n);
   }
 
+  public void prepend(Node<T> n) {
+    if (this.head == null) {
+      this.head = n;
+    }
+
+    n.setNext(this.head);
+    this.head = n;
+  }
+
   /**
    * Meant to be a simple print function for simple types (integer, string)
    */
