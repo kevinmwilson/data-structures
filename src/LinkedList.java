@@ -4,15 +4,35 @@
 public class LinkedList<T> {
 
   private Node<T> head;
+  private Node<T> tail;
 
   public LinkedList() {}
 
   public LinkedList(Node<T> head) {
     this.head = head;
+
+    findTail();
   }
 
   public Node<T> getHead() {
     return this.head;
+  }
+
+  public Node<T> getTail() {
+    return this.tail;
+  }
+
+  /**
+   * Iterates through the list to find the tail
+   */
+  private void findTail() {
+    Node<T> iter = this.head;
+
+    while(iter.getNext() != null) {
+      iter = iter.getNext();
+    }
+
+    this.tail = iter;
   }
 
   public void append(Node<T> n) {
@@ -20,23 +40,18 @@ public class LinkedList<T> {
     // if the list is null, make the appendee the head
     if (this.head == null) {
       this.head = n;
+      this.tail = n;
       return;
     }
 
-    // an iterator to scan the list
-    Node<T> iter = this.head;
-
-    while(iter.getNext() != null) {
-      iter = iter.getNext();
-    }
-
-    // iter is now the tail
-    iter.setNext(n);
+    tail.setNext(n);
+    tail = n;
   }
 
   public void prepend(Node<T> n) {
     if (this.head == null) {
       this.head = n;
+      this.tail = n;
     }
 
     n.setNext(this.head);
