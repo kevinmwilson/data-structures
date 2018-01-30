@@ -32,4 +32,8 @@ public class Node<T> {
   public Node<T> getNext() {
     return this.next;
   }
+
+  public void setNext(Node<T> other) {
+    this.next = other;
+  }
 }
