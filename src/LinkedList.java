@@ -21,6 +21,12 @@ public class LinkedList<T> {
 
   public void append(Node<T> n) {
 
+    // if the list is null, make the appendee the head
+    if (this.head == null) {
+      this.head = n;
+      return;
+    }
+
     // an iterator to scan the list
     Node<T> iter = this.head;
 
